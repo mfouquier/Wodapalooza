@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".StopwatchActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <Switch
+        android:id="@+id/finish_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:fontFamily="@font/orbitron_black"
+        android:switchMinWidth="150dp"
+        android:switchPadding="5dp"
+        android:text="@string/slide"
+        android:textSize="20sp"
+        android:thumbTint="@drawable/slidethumb"
+        android:trackTint="@drawable/slidetrack"
+        app:trackTint="@drawable/slidetrack"
+        android:layout_below="@id/countdownTimer"
+        android:layout_centerHorizontal="true"/>
+
+    <Chronometer
+        android:id="@+id/countdownTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbitron_black"
+        android:keepScreenOn="true"
+        android:text="@string/timer_zeros"
+        android:textColor="@color/neon_green"
+        android:textSize="90sp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:id="@+id/plusrounds"
+        android:layout_width="119dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="12dp"
+        app:tint="@color/neon_green"
+        app:srcCompat="@drawable/add_round"
+        android:layout_below="@id/finish_switch"
+        android:layout_marginLeft="200dp"/>
+
+    <TextView
+        android:id="@+id/rounds"
+        android:layout_width="109dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/orbitron_black"
+        android:text="@string/rounds"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_below="@id/roundcount"
+        android:layout_toRightOf="@id/plusrounds"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/roundcount"
+        android:layout_width="119dp"
+        android:layout_height="103dp"
+        android:fontFamily="@font/orbitron_black"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        android:textColor="@color/neon_green"
+        android:textSize="75sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/finish_switch"
+        android:layout_toRightOf="@id/plusrounds"
+        />
+
+    <TextView
+        android:id="@+id/delay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/orbitron_black"
+        android:text="@string/five"
+        android:textAlignment="center"
+        android:textColor="@color/bright_red"
+        android:textSize="300sp"
+        android:visibility="invisible"
+        android:layout_centerInParent="true" />
+
+    <ImageView
+        android:id="@+id/fireworksImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fireworks"
+        android:visibility="invisible"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/taptostart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:fontFamily="@font/orbitron_black"
+        android:text="Tap to Start/Pause"
+        android:textColor="@color/neon_green"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

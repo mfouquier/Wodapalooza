@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/setTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_vertical"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/orbitron_black"
+        android:text="Set Duration"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/setTimeEditText"
+        android:layout_width="75dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/orbitron_black"
+        android:inputType="numberSigned"
+        android:outlineAmbientShadowColor="@color/black"
+        android:text=""
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/SetWorkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/orbitron_black"
+        android:text="Set Work Duration"
+        android:textSize="23sp"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/setWorkEditText"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/orbitron_black"
+        android:gravity="center"
+        android:inputType="numberSigned"
+        android:outlineAmbientShadowColor="@color/black"
+        android:text=""
+        android:textSize="30sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/setRestDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:fontFamily="@font/orbitron_black"
+        android:text="Set Rest Duration"
+        android:textSize="23sp"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/setRestEditText"
+        android:layout_width="75dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/orbitron_black"
+        android:inputType="numberSigned"
+        android:outlineAmbientShadowColor="@color/black"
+        android:text=""
+        android:textSize="30sp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
