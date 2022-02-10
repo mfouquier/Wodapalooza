@@ -38,6 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        String dropTableExercises = "DROP TABLE IF EXISTS " + EXERCISES_TABLE;
+        String dropTableHiit = "DROP TABLE IF EXISTS " + HIIT_TABLE;
         //CREATE the Exercises Table
         String createTableExercises = "CREATE TABLE " + EXERCISES_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NAME + " VARCHAR (25), " + COLUMN_BODY_ZONE + " VARCHAR (10), " + COLUMN_BARBELL + " BIT, " + COLUMN_DUMBBELL + " BIT, "
@@ -49,6 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_DUMBBELL + " BIT, " + COLUMN_KETTLEBELL + " BIT, " + COLUMN_BENCH + " BIT, " + COLUMN_PULLUP_BAR + " BIT, "
                 + COLUMN_SQUAT_RACK + " BIT, " + COLUMN_DIPBAR + " BIT, " + COLUMN_TRX_RINGS + " BIT, " + COLUMN_DESCRIPTION + " TEXT)";
 
+        sqLiteDatabase.execSQL(dropTableExercises);
+        sqLiteDatabase.execSQL(dropTableHiit);
         sqLiteDatabase.execSQL(createTableExercises);
         sqLiteDatabase.execSQL(createTableHiit);
     }
@@ -61,6 +65,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void populateExercisesTable() {
+
+
         String sqlInsert = "INSERT into exercises (name, bodyZone, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRings, description) VALUES" +
                 " (?,?,?,?,?,?,?,?,?,?,?);";
 

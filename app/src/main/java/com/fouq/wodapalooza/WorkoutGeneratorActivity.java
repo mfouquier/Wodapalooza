@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class WorkoutGeneratorActivity extends AppCompatActivity {
 
@@ -69,11 +70,16 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_workout_generator);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //Set the Up Arrow to return to MainActivity
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         databaseHelper = new DatabaseHelper(WorkoutGeneratorActivity.this);
-        databaseHelper.populateExercisesTable();
-        databaseHelper.populateHIITTable();
+//        databaseHelper.populateExercisesTable();
+//        databaseHelper.populateHIITTable();
 
         //Assign RadioButtons, Checkboxes, Buttons
         radioGroupBodyZone = findViewById(R.id.radioGroupWorkout);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WOD Timer</string>
+    <string name="app_name">WODapalooza</string>
     <string name="stopwatch">Stopwatch</string>
     <string name="amrap">AMRAP</string>
     <string name="workoutGenerator">Workout Generator</string>
