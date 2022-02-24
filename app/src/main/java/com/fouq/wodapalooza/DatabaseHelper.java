@@ -128,11 +128,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public List<GeneratedWorkouts> workoutPicker(GeneratorModel generatorModel) {
         List<GeneratedWorkouts> returnList = new ArrayList<>();
+        String sqlQuery;
 
-        String sqlQuery = "SELECT name, description FROM " + EXERCISES_TABLE + " WHERE (body_zone = '" + generatorModel.getBody_zone() + "' ) AND (barbell =  "
-                + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
-                " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
-                " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+        if(generatorModel.getBody_zone().equals("HIIT")){
+            sqlQuery = "SELECT name, description FROM " + HIIT_TABLE + " WHERE (duration = '" + generatorModel.getDuration() + "' ) AND (timeType =  '" + generatorModel.getTimeType() + "' ) AND (barbell =  "
+                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
+                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
+                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+        }else{
+            sqlQuery = "SELECT name, description FROM " + EXERCISES_TABLE + " WHERE (body_zone = '" + generatorModel.getBody_zone() + "' ) AND (barbell =  "
+                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
+                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
+                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+        }
+
+
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(sqlQuery, null);
