@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
@@ -9,12 +10,15 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Switch
         android:id="@+id/finish_switch"
         android:layout_width="wrap_content"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/orbitron_black"
         android:switchMinWidth="150dp"
         android:switchPadding="5dp"
@@ -22,9 +26,10 @@
         android:textSize="20sp"
         android:thumbTint="@drawable/slidethumb"
         android:trackTint="@drawable/slidetrack"
-        app:trackTint="@drawable/slidetrack"
-        android:layout_below="@id/countdownTimer"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countdownTimer"
+        app:trackTint="@drawable/slidetrack" />
 
     <Chronometer
         android:id="@+id/countdownTimer"
@@ -35,47 +40,48 @@
         android:text="@string/timer_zeros"
         android:textColor="@color/neon_green"
         android:textSize="90sp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp"
-        android:layout_centerHorizontal="true"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taptostart" />
 
     <ImageView
         android:id="@+id/plusrounds"
         android:layout_width="119dp"
         android:layout_height="103dp"
-        android:layout_marginBottom="12dp"
-        app:tint="@color/neon_green"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finish_switch"
         app:srcCompat="@drawable/add_round"
-        android:layout_below="@id/finish_switch"
-        android:layout_marginLeft="200dp"/>
+        app:tint="@color/neon_green" />
 
     <TextView
         android:id="@+id/rounds"
-        android:layout_width="109dp"
-        android:layout_height="66dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/orbitron_black"
         android:text="@string/rounds"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:layout_below="@id/roundcount"
-        android:layout_toRightOf="@id/plusrounds"
-        android:layout_centerHorizontal="true"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundcount" />
 
     <TextView
         android:id="@+id/roundcount"
-        android:layout_width="119dp"
-        android:layout_height="103dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/orbitron_black"
         android:text="@string/zero"
         android:textAlignment="center"
         android:textColor="@color/neon_green"
         android:textSize="75sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/finish_switch"
-        android:layout_toRightOf="@id/plusrounds"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toEndOf="@+id/plusrounds"
+        app:layout_constraintTop_toBottomOf="@+id/finish_switch" />
 
     <TextView
         android:id="@+id/delay"
@@ -87,25 +93,35 @@
         android:textColor="@color/bright_red"
         android:textSize="300sp"
         android:visibility="invisible"
-        android:layout_centerInParent="true" />
+        app:layout_constraintBottom_toBottomOf="@+id/fireworksImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fireworksImageView" />
 
     <ImageView
         android:id="@+id/fireworksImageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/fireworks"
         android:visibility="invisible"
-        android:layout_centerInParent="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/taptostart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Tap to Start/Pause"
         android:textColor="@color/neon_green"
         android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

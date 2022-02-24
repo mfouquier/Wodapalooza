@@ -10,6 +10,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.IOException;
+
 
 public class MainActivity extends AppCompatActivity implements delayFragment.delayTimeListener {
 
@@ -23,8 +25,12 @@ public class MainActivity extends AppCompatActivity implements delayFragment.del
         setSupportActionBar(toolbar);
 
         databaseHelper = new DatabaseHelper(MainActivity.this);
-        databaseHelper.populateExercisesTable();
-        databaseHelper.populateHIITTable();
+
+        try {
+            databaseHelper.createDataBase();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //The Toolbar Menu

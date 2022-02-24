@@ -1,6 +1,13 @@
 package com.fouq.wodapalooza;
 
-public class GeneratedWorkouts {
+import android.graphics.fonts.Font;
+import android.graphics.fonts.FontStyle;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
+
+public class GeneratedWorkouts implements Serializable {
     String name;
     String description;
 
@@ -27,9 +34,9 @@ public class GeneratedWorkouts {
 
     @Override
     public String toString() {
-        return "GeneratedWorkouts{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+
+        return "4 SETS OF 10 " +
+                    name + '\n' +
+                    description + '\n';
     }
 }

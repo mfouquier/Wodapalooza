@@ -5,11 +5,22 @@
       <map>
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Capstone/app/src/main/res/layout/activity_main.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Capstone/app/src/main/res/layout/settime.xml" value="0.1" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.281" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable/ic_launcher_background.xml" value="0.281" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable/slidethumb.xml" value="0.281" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable/slidetrack.xml" value="0.281" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout-land/activity_amrap.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout-land/activity_main.xml" value="0.1402116402116402" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout-land/activity_stopwatch.xml" value="0.22" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout-land/activity_workout_generator.xml" value="0.28703703703703703" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_amrap.xml" value="0.16489361702127658" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_generated.xml" value="0.31476449275362317" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_main.xml" value="0.165625" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_stopwatch.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_workout_generator.xml" value="0.1" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/list_view_layout.xml" value="0.31476449275362317" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/menu/timermenu.xml" value="0.3390625" />
       </map>
     </option>
   </component>
