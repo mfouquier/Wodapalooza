@@ -1,5 +1,6 @@
 package com.fouq.wodapalooza;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.io.IOException;
+import java.io.Serializable;
 
 public class WorkoutGeneratorActivity extends AppCompatActivity {
 
@@ -62,10 +66,7 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
 
     //Database
     DatabaseHelper databaseHelper;
-    private GeneratorModel generatorModel;
-
-    //Fragment
-    //WorkoutListFragment workoutListFragment;
+    public static GeneratorModel generatorModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +79,6 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         databaseHelper = new DatabaseHelper(WorkoutGeneratorActivity.this);
-//        databaseHelper.populateExercisesTable();
-//        databaseHelper.populateHIITTable();
 
         //Assign RadioButtons, Checkboxes, Buttons
         radioGroupBodyZone = findViewById(R.id.radioGroupWorkout);
@@ -109,9 +108,6 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
         lv_workoutView = findViewById(R.id.lv_workoutView);
 
         exercisesArray = new int[8];
-        //workoutListFragment = new WorkoutListFragment();
-
-
 
         //////////////////Generate Button On Click Listener////////////////////
         btn_generate.setOnClickListener(new View.OnClickListener() {
@@ -119,8 +115,9 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 generatorModel = new GeneratorModel(duration, bodyZone, timeType, exercisesArray);
-                showWorkoutView(databaseHelper);
-                Toast.makeText(WorkoutGeneratorActivity.this, generatorModel.toString(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(WorkoutGeneratorActivity.this, GeneratedActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -134,10 +131,10 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
                         duration = 1;
                         break;
                     case(R.id.rb_fifteen2twenty):
-                        duration = 3;
+                        duration = 2;
                         break;
                     case(R.id.rb_twentyplus):
-                        duration = 4;
+                        duration = 3;
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + i);
@@ -335,15 +332,5 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    /*
-    /Creates an ArrayAdapter that calls DatabaseHelper method workoutPicker which queries
-    /the SQL database with the generatorModel. The ArrayAdapter is returned to a ListView
-    */
-    public void showWorkoutView(DatabaseHelper databaseHelper) {
-        workoutListArrayAdapter = new ArrayAdapter<GeneratedWorkouts>(WorkoutGeneratorActivity.this,
-                android.R.layout.simple_list_item_1, databaseHelper.workoutPicker(generatorModel));
-        lv_workoutView.setAdapter(workoutListArrayAdapter);
     }
 }

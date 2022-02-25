@@ -1,8 +1,9 @@
 package com.fouq.wodapalooza;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class GeneratorModel {
+public class GeneratorModel implements Serializable {
     String body_zone;
     int duration;
     String timeType;
