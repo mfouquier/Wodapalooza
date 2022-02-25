@@ -131,10 +131,10 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
                         duration = 1;
                         break;
                     case(R.id.rb_fifteen2twenty):
-                        duration = 3;
+                        duration = 2;
                         break;
                     case(R.id.rb_twentyplus):
-                        duration = 4;
+                        duration = 3;
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + i);

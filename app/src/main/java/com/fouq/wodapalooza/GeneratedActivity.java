@@ -6,7 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import java.util.Random;
 
 public class GeneratedActivity extends AppCompatActivity {
 
@@ -42,6 +45,7 @@ public class GeneratedActivity extends AppCompatActivity {
     public void showWorkoutView(DatabaseHelper databaseHelper) {
         workoutListArrayAdapter = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this,
                 R.layout.list_view_layout, databaseHelper.workoutPicker(WorkoutGeneratorActivity.generatorModel));
+
         lv_workoutView.setAdapter(workoutListArrayAdapter);
     }
 }

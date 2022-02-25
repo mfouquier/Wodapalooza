@@ -10,10 +10,25 @@ import java.io.Serializable;
 public class GeneratedWorkouts implements Serializable {
     String name;
     String description;
+    String timeType = null;
 
-    public GeneratedWorkouts(String name, String description){
+    public GeneratedWorkouts(String name, String description, String timeType) {
         this.name = name;
         this.description = description;
+        this.timeType = timeType;
+    }
+
+    public GeneratedWorkouts(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public String getTimeType() {
+        return timeType;
+    }
+
+    public void setTimeType(String timeType) {
+        this.timeType = timeType;
     }
 
     public String getName() {
@@ -34,9 +49,15 @@ public class GeneratedWorkouts implements Serializable {
 
     @Override
     public String toString() {
-
-        return "4 SETS OF 10 " +
+        if (timeType != null) {
+            return name + '\n' + description + '\n';
+        } else {
+            final String s = "4 SETS OF 10 " +
                     name + '\n' +
-                    description + '\n';
+                    description + '\n' +
+                    timeType + '\n';
+            return s;
+
+        }
     }
 }
