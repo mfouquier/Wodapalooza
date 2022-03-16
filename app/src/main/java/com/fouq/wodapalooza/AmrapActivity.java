@@ -18,7 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
 
-public class AmrapActivity extends AppCompatActivity  implements delayFragment.delayTimeListener, SetTimeFragment.setTimeListener {
+public class AmrapActivity extends AppCompatActivity  implements DelayFragment.delayTimeListener, SetTimeFragment.setTimeListener {
 
     private long mStartTimeInMillis = 600000;
     private boolean isRunning;
@@ -153,23 +153,6 @@ public class AmrapActivity extends AppCompatActivity  implements delayFragment.d
         outState.putLong("endTime", mEndTime);
     }
 
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        mTimeLeftInMillis = savedInstanceState.getLong("millisLeft");
-//        isRunning = savedInstanceState.getBoolean("timerRunning");
-//        isPaused = savedInstanceState.getBoolean("isPaused");
-//        roundIndex = savedInstanceState.getInt("roundIndex");
-//        mRoundCount.setText(mRoundNumbers[roundIndex]);
-//        updateTimer();
-//
-//        if(isRunning){
-//            mEndTime = savedInstanceState.getLong("endTime");
-//            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
-//            startTimer();
-//        }
-//    }
-
     //START THE DELAY TIMER
     private void timerDelayStart() {
         mDelay = new CountDownTimer(mDelayTimeMills, 1000) {
@@ -272,7 +255,7 @@ public class AmrapActivity extends AppCompatActivity  implements delayFragment.d
     }
     //Delay Menu Clicked --> delayFragment
     public void delayMenuClicked(){
-        delayFragment delay = new delayFragment();
+        DelayFragment delay = new DelayFragment();
         delay.show(getSupportFragmentManager(),"set delay time" );
     }
     //Applies the delay change set by delayFragment

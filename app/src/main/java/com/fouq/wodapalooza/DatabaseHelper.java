@@ -18,9 +18,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    private static final String TAG = "SQL QUERY RESULT: ";
     private static String DB_PATH = "/data/data/com.fouq.wodapalooza/databases/";
     private static String DB_NAME = "workouts.db";
     private SQLiteDatabase myDataBase;
@@ -131,10 +133,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String sqlQuery;
 
         if (generatorModel.getBody_zone().equals("HIIT")) {
-            sqlQuery = "SELECT name, description, timeType FROM " + HIIT_TABLE + " WHERE (duration = '" + generatorModel.getDuration() + "' ) AND (timeType =  '" + generatorModel.getTimeType() + "' ) AND (barbell =  "
-                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
-                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
-                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+//            sqlQuery = "SELECT name, description, timeType FROM " + HIIT_TABLE + " WHERE (duration = '" + generatorModel.getDuration() + "' ) AND (timeType =  '" + generatorModel.getTimeType() + "' ) AND (barbell =  "
+//                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
+//                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
+//                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+
+            sqlQuery = "SELECT name, duration, timeType, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description from hiit where timeType = '" + generatorModel.getTimeType() +
+                    "' AND duration = '" + generatorModel.getDuration() + "';";
 
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.rawQuery(sqlQuery, null);
@@ -142,21 +147,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if (cursor.moveToFirst()) {
                 do {
                     String name = cursor.getString(0);
-                    String description = cursor.getString(1);
+                    int duration = cursor.getInt(1);
                     String timeType = cursor.getString(2);
-                    GeneratedWorkouts generatedWorkouts = new GeneratedWorkouts(name, description, timeType);
+                    int barbell = cursor.getInt(3);
+                    int dumbbell = cursor.getInt(4);
+                    int kettlebell = cursor.getInt(5);
+                    int bench = cursor.getInt(6);
+                    int pullupBar = cursor.getInt(7);
+                    int squatRack = cursor.getInt(8);
+                    int dipBar = cursor.getInt(9);
+                    int trxRing = cursor.getInt(10);
+                    String description = cursor.getString(11);
+                    GeneratedWorkouts generatedWorkouts = new GeneratedWorkouts(name, duration, timeType, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description);
 
-                    returnList.add(generatedWorkouts);
+                    if (generatedWorkouts.getBarbell() == 1 && generatorModel.equipmentAvailable[0] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getDumbbell() == 1 && generatorModel.equipmentAvailable[1] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getKettlebell() == 1 && generatorModel.equipmentAvailable[2] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getBench() == 1 && generatorModel.equipmentAvailable[3] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getPullupBar() == 1 && generatorModel.equipmentAvailable[4] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getSquatRack() == 1 && generatorModel.equipmentAvailable[5] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getDipBar() == 1 && generatorModel.equipmentAvailable[6] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getTrxRing() == 1 && generatorModel.equipmentAvailable[7] == 1) {
+                        returnList.add(generatedWorkouts);
+
+                    }else if (generatedWorkouts.getBarbell() == 0 && generatedWorkouts.getDumbbell() == 0 && generatedWorkouts.getKettlebell() == 0 &&
+                            generatedWorkouts.getBench() == 0 && generatedWorkouts.getPullupBar() == 0 && generatedWorkouts.getSquatRack() == 0 &&
+                            generatedWorkouts.getDipBar() == 0 && generatedWorkouts.getTrxRing() == 0) {
+                        returnList.add(generatedWorkouts);
+                    }
 
                 } while (cursor.moveToNext());
             }
 
             return returnList;
         } else {
-            sqlQuery = "SELECT name, description FROM " + EXERCISES_TABLE + " WHERE (body_zone = '" + generatorModel.getBody_zone() + "' ) AND (barbell =  "
-                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
-                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
-                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+//            sqlQuery = "SELECT name, description FROM " + EXERCISES_TABLE + " WHERE (body_zone = '" + generatorModel.getBody_zone() + "' ) AND (barbell =  "
+//                    + generatorModel.equipmentAvailable[0] + " OR dumbbell = " + generatorModel.equipmentAvailable[1] + " OR kettlebell = " + generatorModel.equipmentAvailable[2] +
+//                    " OR bench = " + generatorModel.equipmentAvailable[3] + " OR pullupBar = " + generatorModel.equipmentAvailable[4] + " OR squatRack = " + generatorModel.equipmentAvailable[5] +
+//                    " OR dipBar = " + generatorModel.equipmentAvailable[6] + " OR trxRing = " + generatorModel.equipmentAvailable[7] + ");";
+
+            sqlQuery = "SELECT name, body_zone, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description from exercises where body_zone = '" + generatorModel.getBody_zone() + "';";
 
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.rawQuery(sqlQuery, null);
@@ -164,16 +208,61 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if (cursor.moveToFirst()) {
                 do {
                     String name = cursor.getString(0);
-                    String description = cursor.getString(1);
-                    GeneratedWorkouts generatedWorkouts = new GeneratedWorkouts(name, description);
+                    String body_zone = cursor.getString(1);
+                    int barbell = cursor.getInt(2);
+                    int dumbbell = cursor.getInt(3);
+                    int kettlebell = cursor.getInt(4);
+                    int bench = cursor.getInt(5);
+                    int pullupBar = cursor.getInt(6);
+                    int squatRack = cursor.getInt(7);
+                    int dipBar = cursor.getInt(8);
+                    int trxRing = cursor.getInt(9);
+                    String description = cursor.getString(10);
+                    GeneratedWorkouts generatedWorkouts = new GeneratedWorkouts(name, body_zone, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description);
 
-                    returnList.add(generatedWorkouts);
+                            if (generatedWorkouts.getBarbell() == 1 && generatorModel.equipmentAvailable[0] == 1) {
+                                returnList.add(generatedWorkouts);
 
+                            }else if (generatedWorkouts.getDumbbell() == 1 && generatorModel.equipmentAvailable[1] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getKettlebell() == 1 && generatorModel.equipmentAvailable[2] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getBench() == 1 && generatorModel.equipmentAvailable[3] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getPullupBar() == 1 && generatorModel.equipmentAvailable[4] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getSquatRack() == 1 && generatorModel.equipmentAvailable[5] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getDipBar() == 1 && generatorModel.equipmentAvailable[6] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getTrxRing() == 1 && generatorModel.equipmentAvailable[7] == 1) {
+                                returnList.add(generatedWorkouts);
+
+                            }else if (generatedWorkouts.getBarbell() == 0 && generatedWorkouts.getDumbbell() == 0 && generatedWorkouts.getKettlebell() == 0 &&
+                                    generatedWorkouts.getBench() == 0 && generatedWorkouts.getPullupBar() == 0 && generatedWorkouts.getSquatRack() == 0 &&
+                                    generatedWorkouts.getDipBar() == 0 && generatedWorkouts.getTrxRing() == 0) {
+                                returnList.add(generatedWorkouts);
+                            }
                 } while (cursor.moveToNext());
             }
+
+           }
+//            if(generatorModel.getDuration() == 1){
+//                Random random = new Random();
+//                int randInt = random.nextInt(returnList.size());
+//
+//                for(int i = 0; i <= returnList.size() / 5; i++){
+//                    returnList.remove(randInt);
+//                }
+//            }
 
             return returnList;
         }
 
     }
-}

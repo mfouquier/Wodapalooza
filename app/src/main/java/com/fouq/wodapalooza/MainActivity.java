@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import java.io.IOException;
 
 
-public class MainActivity extends AppCompatActivity implements delayFragment.delayTimeListener {
+public class MainActivity extends AppCompatActivity implements DelayFragment.delayTimeListener {
 
     DatabaseHelper databaseHelper;
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements delayFragment.del
     }
     //Delay Menu Clicked --> delayFragment
     public void delayMenuClicked(){
-        delayFragment delay = new delayFragment();
+        DelayFragment delay = new DelayFragment();
         delay.show(getSupportFragmentManager(),"set delay time" );
     }
     //Stopwatch Button Clicked --> Stopwatch Activity
