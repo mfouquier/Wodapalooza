@@ -11,6 +11,37 @@ public class GeneratedWorkouts implements Serializable {
     String name;
     String description;
     String timeType = null;
+    String body_zone;
+    int duration, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing;
+
+    public GeneratedWorkouts(String name, String body_zone, int barbell, int dumbbell, int kettlebell, int bench, int pullupBar, int squatRack, int dipBar, int trxRing, String description) {
+        this.name = name;
+        this.description = description;
+        this.body_zone = body_zone;
+        this.barbell = barbell;
+        this.dumbbell = dumbbell;
+        this.kettlebell = kettlebell;
+        this.bench = bench;
+        this.pullupBar = pullupBar;
+        this.squatRack = squatRack;
+        this.dipBar = dipBar;
+        this.trxRing = trxRing;
+    }
+
+    public GeneratedWorkouts(String name, int duration, String timeType, int barbell, int dumbbell, int kettlebell, int bench, int pullupBar, int squatRack, int dipBar, int trxRing, String description) {
+        this.name = name;
+        this.description = description;
+        this.timeType = timeType;
+        this.duration = duration;
+        this.barbell = barbell;
+        this.dumbbell = dumbbell;
+        this.kettlebell = kettlebell;
+        this.bench = bench;
+        this.pullupBar = pullupBar;
+        this.squatRack = squatRack;
+        this.dipBar = dipBar;
+        this.trxRing = trxRing;
+    }
 
     public GeneratedWorkouts(String name, String description, String timeType) {
         this.name = name;
@@ -21,6 +52,78 @@ public class GeneratedWorkouts implements Serializable {
     public GeneratedWorkouts(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public String getBody_zone() {
+        return body_zone;
+    }
+
+    public void setBody_zone(String body_zone) {
+        this.body_zone = body_zone;
+    }
+
+    public int getBarbell() {
+        return barbell;
+    }
+
+    public void setBarbell(int barbell) {
+        this.barbell = barbell;
+    }
+
+    public int getDumbbell() {
+        return dumbbell;
+    }
+
+    public void setDumbbell(int dumbbell) {
+        this.dumbbell = dumbbell;
+    }
+
+    public int getKettlebell() {
+        return kettlebell;
+    }
+
+    public void setKettlebell(int kettlebell) {
+        this.kettlebell = kettlebell;
+    }
+
+    public int getBench() {
+        return bench;
+    }
+
+    public void setBench(int bench) {
+        this.bench = bench;
+    }
+
+    public int getPullupBar() {
+        return pullupBar;
+    }
+
+    public void setPullupBar(int pullupBar) {
+        this.pullupBar = pullupBar;
+    }
+
+    public int getSquatRack() {
+        return squatRack;
+    }
+
+    public void setSquatRack(int squatRack) {
+        this.squatRack = squatRack;
+    }
+
+    public int getDipBar() {
+        return dipBar;
+    }
+
+    public void setDipBar(int dipBar) {
+        this.dipBar = dipBar;
+    }
+
+    public int getTrxRing() {
+        return trxRing;
+    }
+
+    public void setTrxRing(int trxRing) {
+        this.trxRing = trxRing;
     }
 
     public String getTimeType() {

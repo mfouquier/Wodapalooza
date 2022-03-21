@@ -11,7 +11,7 @@ import android.widget.NumberPicker;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class delayFragment extends AppCompatDialogFragment {
+public class DelayFragment extends AppCompatDialogFragment {
     private NumberPicker delayTime;
     private delayTimeListener delayListener;
     private int lastAction = -1;

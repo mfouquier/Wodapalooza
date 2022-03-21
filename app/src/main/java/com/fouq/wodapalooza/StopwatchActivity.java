@@ -19,7 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class StopwatchActivity extends AppCompatActivity implements delayFragment.delayTimeListener{
+public class StopwatchActivity extends AppCompatActivity implements DelayFragment.delayTimeListener{
     private Chronometer stopwatch;
     private long pauseOffset;
     private long mDelayTimeMills = 5000;
@@ -115,21 +115,6 @@ public class StopwatchActivity extends AppCompatActivity implements delayFragmen
         outState.putBoolean("isPaused", isPaused);
         outState.putInt("roundIndex", roundIndex);
     }
-
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        stopwatch.setBase(savedInstanceState.getLong("timer"));
-//        isRunning = savedInstanceState.getBoolean("timerRunning");
-//        isPaused = savedInstanceState.getBoolean("isPaused");
-//        roundIndex = savedInstanceState.getInt("roundIndex");
-//        mRoundCount.setText(mRoundNumbers[roundIndex]);
-//
-//
-//        if(isRunning){
-//            startStopwatch();
-//        }
-//    }
 
     //Stopwatch Methods - Start/Stop/Pause
     private void startStopwatch(){
@@ -251,13 +236,14 @@ public class StopwatchActivity extends AppCompatActivity implements delayFragmen
 
     //Delay Menu Clicked --> delayFragment
     public void delayMenuClicked(){
-        delayFragment delay = new delayFragment();
+        DelayFragment delay = new DelayFragment();
         delay.show(getSupportFragmentManager(),"set delay time" );
     }
     @Override
     public void applyDelay(int delay) {
         mDelayTimeMills = delay;
     }
+
     //Increment the Round number when the + is clicked
     public void roundCounter(){
         roundIndex++;
