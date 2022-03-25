@@ -22,7 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 public class StopwatchActivity extends AppCompatActivity implements DelayFragment.delayTimeListener{
     private Chronometer stopwatch;
     private long pauseOffset;
-    private long mDelayTimeMills = 5000;
+    public long mDelayTimeMills = 5000;
     private TextView mTextViewDelay;
     private Switch mFinishSlide;
     private ImageView mFireworksImageView;
@@ -223,6 +223,8 @@ public class StopwatchActivity extends AppCompatActivity implements DelayFragmen
                 return true;
             case R.id.reset_icon:
                 stopTimer();
+                delayComplete = false;
+                isPaused = false;
                 mFinishSlide.setChecked(false);
                 mFireworksImageView.setVisibility(View.INVISIBLE);
                 mRoundCount.setText(mRoundNumbers[0]);

@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements DelayFragment.del
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-
         }
     }
     //Delay Menu Clicked --> delayFragment
