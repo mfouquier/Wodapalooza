@@ -30,8 +30,9 @@ public class DelayFragment extends AppCompatDialogFragment {
         delayTime.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){
-                int delayTimePicked = delayTime.getValue() * 1000;
-                delayListener.applyDelay(delayTimePicked);
+                //int delayTimePicked = delayTime.getValue() * 1000;
+                //int delayTimePicked = newVal * 1000;
+                delayListener.applyDelay(newVal * 1000);
             }
         });
         //CLOSE THE NUMBER PICKER ON A TOUCH DOWN UP

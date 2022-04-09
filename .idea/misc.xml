@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Capstone/app/src/main/res/layout/activity_main.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Capstone/app/src/main/res/layout/settime.xml" value="0.1" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable-anydpi/add_round.xml" value="0.304" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.281" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable/ic_launcher_background.xml" value="0.281" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/drawable/slidethumb.xml" value="0.281" />
@@ -19,6 +20,8 @@
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_stopwatch.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_workout_generator.xml" value="0.1" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/list_view_layout.xml" value="0.31476449275362317" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/setdelay.xml" value="0.31476449275362317" />
+        <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/settime.xml" value="0.31476449275362317" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/J6-ADMIN/Documents/Git/Wodapalooza/app/src/main/res/menu/timermenu.xml" value="0.3390625" />
         <entry key="..\:/Users/mfouq/Documents/Git/Wodapalooza/app/src/main/res/layout/activity_generated.xml" value="0.16983695652173914" />
