@@ -78,7 +78,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String dbFilePath = DB_PATH + DB_NAME;
 
-
         try {
             myInput = myContext.getAssets().open(DB_NAME);
             myOutput = new FileOutputStream(dbFilePath);
@@ -116,22 +115,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             myDataBase.close();
         super.close();
     }
-
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
+    /*
+     workoutPicker Method - takes a GeneratorModel object that is created from user choices in the
+     app and runs a SQL query based on selections. If body_zone is HIIT the hiit table is queried
+     if Upper, Lower, or Core then the Exercises table is queried.
 
+     The results of the query are placed in an ArrayList of type GeneratedWorkout
+     */
     public List<GeneratedWorkouts> workoutPicker(GeneratorModel generatorModel) {
         List<GeneratedWorkouts> returnList = new ArrayList<>();
         String sqlQuery;
-
+//Query the HIIT table
         if (generatorModel.getBody_zone().equals("HIIT")) {
             sqlQuery = "SELECT name, duration, timeType, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description from hiit where timeType = '" + generatorModel.getTimeType() +
                     "' AND duration = '" + generatorModel.getDuration() + "';";
@@ -179,6 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             return returnList;
         } else {
+//ELSE Query the Exercises table
             sqlQuery = "SELECT name, body_zone, barbell, dumbbell, kettlebell, bench, pullupBar, squatRack, dipBar, trxRing, description from exercises where body_zone = '" + generatorModel.getBody_zone() + "';";
             SQLiteDatabase db = this.getReadableDatabase();
             Cursor cursor = db.rawQuery(sqlQuery, null);
@@ -222,15 +224,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
 
            }
-//            if(generatorModel.getDuration() == 1){
-//                Random random = new Random();
-//                int randInt = random.nextInt(returnList.size());
-//
-//                for(int i = 0; i <= returnList.size() / 5; i++){
-//                    returnList.remove(randInt);
-//                }
-//            }
-
             return returnList;
         }
 
