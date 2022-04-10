@@ -157,8 +157,8 @@ public class GeneratedWorkouts implements Serializable {
         } else {
             final String s = "4 SETS OF 10 " +
                     name + '\n' +
-                    description + '\n' +
-                    timeType + '\n';
+                    description + '\n' ;
+                    //timeType + '\n';
             return s;
 
         }
