@@ -23,6 +23,7 @@
         android:switchMinWidth="150dp"
         android:switchPadding="5dp"
         android:text="@string/slide"
+        android:textColor="@color/neon_green"
         android:textSize="20sp"
         android:thumbTint="@drawable/slidethumb"
         android:trackTint="@drawable/slidetrack"

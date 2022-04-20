@@ -10,9 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WODaplooza">
         <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".GeneratedActivity"
             android:label="@string/generated_workout_label"
-            android:parentActivityName=".WorkoutGeneratorActivity"/>
+            android:parentActivityName=".WorkoutGeneratorActivity" />
         <activity
             android:name=".WorkoutGeneratorActivity"
             android:label="@string/workoutGenerator"
@@ -28,11 +37,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
