@@ -21,7 +21,7 @@
         android:fontFamily="@font/orbitron_black"
         android:onClick="onStopwatchClick"
         android:text="@string/stopwatch"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
@@ -34,7 +34,7 @@
         android:fontFamily="@font/orbitron_black"
         android:onClick="onAmrapClick"
         android:text="@string/amrap"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/stopwatch" />
@@ -47,7 +47,7 @@
         android:fontFamily="@font/orbitron_black"
         android:onClick="onWorkoutGeneratorClick"
         android:text="@string/workoutGenerator"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"

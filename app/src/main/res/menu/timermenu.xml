@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/reset_icon"
-        android:icon="@drawable/delay_timer_dark"
+        android:icon="@drawable/reset_white"
         android:title="@string/reset"
         app:showAsAction="ifRoom"/>
     <item

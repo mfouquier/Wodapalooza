@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="teal_200">#14213d</color>
+    <color name="teal_700">#14213d</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#7C7C7C</color>
+    <color name="gray">#ced4da</color>
     <color name="orange">#FF9800</color>
-    <color name="neon_green">#023e8a</color>
+    <color name="neon_green">#14213d</color>
     <color name="green">#009637</color>
     <color name="bright_red">#DE2A33</color>
     <color name="neon_yellow">#FFEA19</color>
-    <color name="black">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="original_grey">#5E6166</color>
 </resources>

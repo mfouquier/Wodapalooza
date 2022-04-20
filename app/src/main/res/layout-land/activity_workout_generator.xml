@@ -21,7 +21,7 @@
         android:fontFamily="@font/orbitron_black"
         android:gravity="center"
         android:text="@string/select_time_duration"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -67,7 +67,7 @@
         android:fontFamily="@font/orbitron_black"
         android:gravity="center"
         android:text="Select Workout Type"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv_timeDuration"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
@@ -118,7 +118,7 @@
         android:fontFamily="@font/orbitron_black"
         android:gravity="center"
         android:text="Select HIIT Style"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/radioGroupHIITtime" />
 
@@ -158,7 +158,7 @@
         android:fontFamily="@font/orbitron_black"
         android:gravity="center"
         android:text="Select Available Equipment"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroupHIITtime" />
@@ -256,7 +256,7 @@
         android:backgroundTint="@color/neon_green"
         android:fontFamily="@font/orbitron_black"
         android:text="Generate"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
