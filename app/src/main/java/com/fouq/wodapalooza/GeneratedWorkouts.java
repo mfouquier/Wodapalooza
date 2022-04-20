@@ -154,13 +154,15 @@ public class GeneratedWorkouts implements Serializable {
     public String toString() {
         if (timeType != null) {
             return name + '\n' + description + '\n';
-        } else {
+        } else if (timeType == null) {
             final String s = "4 SETS OF 10 " +
                     name + '\n' +
                     description + '\n' ;
                     //timeType + '\n';
             return s;
 
+        } else{
+            return "No workouts meet your criteria";
         }
     }
 }

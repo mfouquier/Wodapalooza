@@ -49,39 +49,46 @@ public class GeneratedActivity extends AppCompatActivity {
         workoutListArrayAdapter = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this,
                 R.layout.list_view_layout, databaseHelper.workoutPicker(WorkoutGeneratorActivity.generatorModel));
 
-        //lv_workoutView.setAdapter(workoutListArrayAdapter);
-
-        if(WorkoutGeneratorActivity.generatorModel.getTimeType() != null){
-            Random random = new Random();
-            ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
-            for(int i = 0; i < 1; i++) {
-                int randInt = random.nextInt(workoutListArrayAdapter.getCount());
-                listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
+        try {
+            if (WorkoutGeneratorActivity.generatorModel.getTimeType() != null) {
+                Random random = new Random();
+                ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
+                for (int i = 0; i < 1; i++) {
+                    int randInt = random.nextInt(workoutListArrayAdapter.getCount());
+                    listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
+                }
+                lv_workoutView.setAdapter(listItem);
+            } else if (WorkoutGeneratorActivity.generatorModel.getDuration() == 1) {
+                Random random = new Random();
+                ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
+                for (int i = 0; i < 3; i++) {
+                    int randInt = random.nextInt(workoutListArrayAdapter.getCount());
+                    listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
+                }
+                lv_workoutView.setAdapter(listItem);
+            } else if (WorkoutGeneratorActivity.generatorModel.getDuration() == 2) {
+                Random random = new Random();
+                ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
+                for (int i = 0; i < 4; i++) {
+                    int randInt = random.nextInt(workoutListArrayAdapter.getCount());
+                    listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
+                }
+                lv_workoutView.setAdapter(listItem);
+            } else if (WorkoutGeneratorActivity.generatorModel.getDuration() == 3) {
+                Random random = new Random();
+                ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
+                for (int i = 0; i < 5; i++) {
+                    int randInt = random.nextInt(workoutListArrayAdapter.getCount());
+                    listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
+                }
+                lv_workoutView.setAdapter(listItem);
             }
-            lv_workoutView.setAdapter(listItem);
-        }else if(WorkoutGeneratorActivity.generatorModel.getDuration() == 1){
-            Random random = new Random();
-            ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
-            for(int i = 0; i < 3; i++) {
-                int randInt = random.nextInt(workoutListArrayAdapter.getCount());
-                listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
-            }
-            lv_workoutView.setAdapter(listItem);
-        } else if(WorkoutGeneratorActivity.generatorModel.getDuration() == 2){
-            Random random = new Random();
-            ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
-            for(int i = 0; i < 4; i++) {
-                int randInt = random.nextInt(workoutListArrayAdapter.getCount());
-                listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
-            }
-            lv_workoutView.setAdapter(listItem);
-        } else if(WorkoutGeneratorActivity.generatorModel.getDuration() == 3){
-            Random random = new Random();
-            ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
-            for(int i = 0; i < 5; i++) {
-                int randInt = random.nextInt(workoutListArrayAdapter.getCount());
-                listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            ArrayAdapter<String> listItem = new ArrayAdapter<String>(GeneratedActivity.this, R.layout.list_view_layout);
+            System.out.println("No matches to your criteria. Try again.");
+            String noMatch = "No matches to your criteria. Try again.";
+            listItem.add(noMatch);
             lv_workoutView.setAdapter(listItem);
         }
     }
