@@ -139,6 +139,11 @@ public class AmrapActivity extends AppCompatActivity  implements DelayFragment.d
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
 
+        endNotification();
+        if(mTimeLeftInMillis <= 1000){
+            sound.playShortBeep();
+        }
+
         String timeLeft = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         mTextViewCountDown.setText(timeLeft);
     }
@@ -169,6 +174,52 @@ public class AmrapActivity extends AppCompatActivity  implements DelayFragment.d
             }
         }.start();
     }
+//Plays audio when 1 minute, 30 seconds, 10,9,8.... remain on the clock
+    private void endNotification(){
+        int seconds = (int) (mTimeLeftInMillis / 1000);
+        switch(seconds){
+            case 60:
+                sound.playOneMinute();
+                break;
+            case 30:
+                sound.playThirtySeconds();
+                break;
+            case 10:
+                sound.playTenSeconds();
+                break;
+            case 9:
+                sound.playShortBeep();
+                break;
+            case 8:
+                sound.playShortBeep();
+                break;
+            case 7:
+                sound.playShortBeep();
+                break;
+            case 6:
+                sound.playShortBeep();
+                break;
+            case 5:
+                sound.playShortBeep();
+                break;
+            case 4:
+                sound.playShortBeep();
+                break;
+            case 3:
+                sound.playShortBeep();
+                break;
+            case 2:
+                sound.playShortBeep();
+                break;
+            case 1:
+                sound.playShortBeep();
+                break;
+            default:
+                break;
+        }
+    }
+
+    //Plays audio for the Delay timer countdown
     private void updateTimerDelay() {
         int seconds = (int) (mDelayTimeMills / 1000);
         switch (seconds){

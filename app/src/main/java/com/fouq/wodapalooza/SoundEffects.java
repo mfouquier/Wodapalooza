@@ -10,6 +10,9 @@ public class SoundEffects {
     private static int mShortBeep;
     private static int mLongBeep;
     private static int mFireworks;
+    private static int mOneMinuteRemaining;
+    private static int mThirtySecondsRemaining;
+    private static int mTenSecondsRemaining;
 
     public SoundEffects(Context context) {
 
@@ -17,6 +20,9 @@ public class SoundEffects {
         mShortBeep = mSoundPool.load(context, R.raw.beep_short, 1);
         mLongBeep = mSoundPool.load(context, R.raw.beep_long, 1);
         mFireworks = mSoundPool.load(context, R.raw.fireworkssound, 1);
+        mOneMinuteRemaining = mSoundPool.load(context, R.raw.one_minute_remaining, 1);
+        mThirtySecondsRemaining = mSoundPool.load(context, R.raw.thirty_seconds_remaining, 1);
+        mTenSecondsRemaining = mSoundPool.load(context, R.raw.ten_seconds_remaining, 1);
     }
 
     public void playShortBeep(){
@@ -28,4 +34,10 @@ public class SoundEffects {
     }
 
     public void playFireworks(){mSoundPool.play(mFireworks,1.0f, 1.0f, 1, 0, 1.0f);}
+
+    public void playOneMinute(){mSoundPool.play(mOneMinuteRemaining,1.0f, 1.0f, 1, 0, 1.0f);}
+
+    public void playThirtySeconds(){mSoundPool.play(mThirtySecondsRemaining,1.0f, 1.0f, 1, 0, 1.0f);}
+
+    public void playTenSeconds(){mSoundPool.play(mTenSecondsRemaining,1.0f, 1.0f, 1, 0, 1.0f);}
 }
