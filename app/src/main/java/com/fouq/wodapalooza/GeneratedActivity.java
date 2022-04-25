@@ -1,10 +1,15 @@
 package com.fouq.wodapalooza;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -19,6 +24,8 @@ public class GeneratedActivity extends AppCompatActivity {
 
     //Array adapter
     ArrayAdapter workoutListArrayAdapter;
+
+    GeneratedWorkouts description;
 
     //Database
     DatabaseHelper databaseHelper;
@@ -38,6 +45,8 @@ public class GeneratedActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(GeneratedActivity.this);
 
         showWorkoutView(databaseHelper);
+
+
     }
 
     /*
@@ -58,6 +67,13 @@ public class GeneratedActivity extends AppCompatActivity {
                     listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
                 }
                 lv_workoutView.setAdapter(listItem);
+                lv_workoutView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent openLink = new Intent(Intent.ACTION_VIEW, Uri.parse(description.getDescription()));
+                        startActivity(openLink);
+                    }
+                });
             } else if (WorkoutGeneratorActivity.generatorModel.getDuration() == 1) {
                 Random random = new Random();
                 ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);

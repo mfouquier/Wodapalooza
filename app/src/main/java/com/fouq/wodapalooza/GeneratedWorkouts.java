@@ -1,11 +1,10 @@
 package com.fouq.wodapalooza;
 
-import android.graphics.fonts.Font;
-import android.graphics.fonts.FontStyle;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class GeneratedWorkouts implements Serializable {
     String name;
@@ -152,17 +151,14 @@ public class GeneratedWorkouts implements Serializable {
 
     @Override
     public String toString() {
-        if (timeType != null) {
-            return name + '\n' + description + '\n';
-        } else if (timeType == null) {
-            final String s = "4 SETS OF 10 " +
-                    name + '\n' +
-                    description + '\n' ;
-                    //timeType + '\n';
-            return s;
+            if (timeType != null) {
+                return name + '\n' + description + '\n';
+            } else {
+                final String s = "4 SETS OF 10 " +
+                        name + '\n' +
+                        description + '\n' ;
+                return s;
 
-        } else{
-            return "No workouts meet your criteria";
-        }
+            }
     }
 }

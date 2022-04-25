@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/neon_green"
     app:titleTextColor="@color/white"
+    app:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
     android:theme="@style/Toolbar"
     android:elevation="4dp">
 
