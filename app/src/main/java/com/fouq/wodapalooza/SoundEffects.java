@@ -1,5 +1,11 @@
 package com.fouq.wodapalooza;
 
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;

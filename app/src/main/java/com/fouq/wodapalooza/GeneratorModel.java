@@ -1,9 +1,12 @@
 package com.fouq.wodapalooza;
 
-import java.io.Serializable;
-import java.util.Arrays;
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
 
-public class GeneratorModel implements Serializable {
+public class GeneratorModel {
     String body_zone;
     int duration;
     String timeType;
@@ -13,12 +16,6 @@ public class GeneratorModel implements Serializable {
         this.duration = duration;
         this.body_zone = body_zone;
         this.timeType = timeType;
-        this.equipmentAvailable = equipmentAvailable;
-    }
-
-    public GeneratorModel(String body_zone, int duration, int[] equipmentAvailable) {
-        this.body_zone = body_zone;
-        this.duration = duration;
         this.equipmentAvailable = equipmentAvailable;
     }
 
@@ -52,15 +49,5 @@ public class GeneratorModel implements Serializable {
 
     public void setEquipmentAvailable(int[] equipmentAvailable) {
         this.equipmentAvailable = equipmentAvailable;
-    }
-
-    @Override
-    public String toString() {
-        return "GeneratorModel{" +
-                "body_zone='" + body_zone + '\'' +
-                ", duration=" + duration +
-                ", timeType='" + timeType + '\'' +
-                ", equipmentAvailable=" + Arrays.toString(equipmentAvailable) +
-                '}';
     }
 }

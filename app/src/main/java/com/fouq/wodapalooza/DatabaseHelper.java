@@ -1,11 +1,16 @@
 package com.fouq.wodapalooza;
 
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -18,7 +23,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -28,9 +32,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
-    // Table name in the database.
-    public static final String EXERCISES_TABLE = "exercises";
-    public static final String HIIT_TABLE = "hiit";
 
     public DatabaseHelper(@Nullable Context context) {
 
@@ -122,7 +123,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
     }
-    /*
+
+    /**
      workoutPicker Method - takes a GeneratorModel object that is created from user choices in the
      app and runs a SQL query based on selections. If body_zone is HIIT the hiit table is queried
      if Upper, Lower, or Core then the Exercises table is queried.
@@ -226,5 +228,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
            }
             return returnList;
         }
-
     }

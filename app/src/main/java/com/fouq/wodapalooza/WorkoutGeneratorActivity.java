@@ -1,9 +1,14 @@
 package com.fouq.wodapalooza;
 
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -57,11 +62,10 @@ public class WorkoutGeneratorActivity extends AppCompatActivity {
     String timeType;
     int[] exercisesArray;
 
-    //Array adapter
-    ArrayAdapter workoutListArrayAdapter;
-
     //Database
     DatabaseHelper databaseHelper;
+
+    //Generator Model object
     public static GeneratorModel generatorModel;
 
     @Override

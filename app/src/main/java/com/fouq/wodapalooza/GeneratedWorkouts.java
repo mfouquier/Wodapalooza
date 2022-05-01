@@ -1,12 +1,12 @@
 package com.fouq.wodapalooza;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
 
-public class GeneratedWorkouts implements Serializable {
+public class GeneratedWorkouts {
     String name;
     String description;
     String timeType = null;

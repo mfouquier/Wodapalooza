@@ -1,5 +1,11 @@
 package com.fouq.wodapalooza;
 
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;

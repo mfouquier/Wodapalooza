@@ -1,5 +1,11 @@
 package com.fouq.wodapalooza;
 
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

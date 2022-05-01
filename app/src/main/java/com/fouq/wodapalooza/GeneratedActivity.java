@@ -1,21 +1,16 @@
 package com.fouq.wodapalooza;
 
-import androidx.annotation.RequiresApi;
+/**
+ * Author: Matthew Fouquier
+ * Date: May 1, 2022
+ * Project: Wodapalooza
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-
-import java.sql.Array;
-import java.util.List;
 import java.util.Random;
 
 public class GeneratedActivity extends AppCompatActivity {
@@ -67,13 +62,6 @@ public class GeneratedActivity extends AppCompatActivity {
                     listItem.add((GeneratedWorkouts) workoutListArrayAdapter.getItem(randInt));
                 }
                 lv_workoutView.setAdapter(listItem);
-                lv_workoutView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Intent openLink = new Intent(Intent.ACTION_VIEW, Uri.parse(description.getDescription()));
-                        startActivity(openLink);
-                    }
-                });
             } else if (WorkoutGeneratorActivity.generatorModel.getDuration() == 1) {
                 Random random = new Random();
                 ArrayAdapter<GeneratedWorkouts> listItem = new ArrayAdapter<GeneratedWorkouts>(GeneratedActivity.this, R.layout.list_view_layout);
