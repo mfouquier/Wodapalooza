@@ -87,28 +87,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Upper Body" />
+            android:text="Upper Body"
+            android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/rb_lowerBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Lower Body" />
+            android:text="Lower Body"
+            android:textSize="12sp"/>
 
         <RadioButton
             android:id="@+id/rb_hiit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="HIIT" />
+            android:text="HIIT"
+            android:textSize="12sp"/>
 
         <RadioButton
             android:id="@+id/rb_core"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Core" />
+            android:text="Core"
+            android:textSize="12sp"/>
 
     </RadioGroup>
 
@@ -180,7 +184,7 @@
         android:id="@+id/cb_dumbbell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Dumbbells"
         app:layout_constraintStart_toEndOf="@+id/cb_barbell"
@@ -190,11 +194,12 @@
         android:id="@+id/cb_kettlebell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/orbitron_black"
-        android:layout_marginEnd="8dp"
         android:text="Kettlebell"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toEndOf="@+id/cb_dumbbell"
         app:layout_constraintTop_toBottomOf="@+id/tv_availableEquipment" />
 
@@ -212,7 +217,7 @@
         android:id="@+id/cb_pullupBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Pullup Bar"
         app:layout_constraintStart_toEndOf="@+id/cb_bench"
@@ -222,11 +227,11 @@
         android:id="@+id/cb_squatRack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="14dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Squat Rack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toEndOf="@+id/cb_pullupBar"
         app:layout_constraintTop_toBottomOf="@+id/cb_kettlebell" />
 
@@ -244,7 +249,7 @@
         android:id="@+id/cb_trxRings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/orbitron_black"
         android:text="TRX / Rings"
         app:layout_constraintStart_toEndOf="@+id/cb_dipBar"
@@ -263,7 +268,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_trxRings"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.114" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

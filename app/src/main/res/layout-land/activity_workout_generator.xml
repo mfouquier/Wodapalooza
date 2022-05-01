@@ -15,6 +15,7 @@
     <TextView
         android:id="@+id/tv_timeDuration"
         android:layout_width="wrap_content"
+        android:textSize="10sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:background="@color/neon_green"
@@ -39,7 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="\u003c 15 min" />
+            android:text="\u003c 15 min"
+            android:textSize="10sp" />
 
 
         <RadioButton
@@ -47,14 +49,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="15 - 20 min" />
+            android:text="15 - 20 min"
+            android:textSize="10sp"/>
 
         <RadioButton
             android:id="@+id/rb_twentyplus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="20+ min" />
+            android:text="20+ min"
+            android:textSize="10sp"/>
 
     </RadioGroup>
 
@@ -65,6 +69,7 @@
         android:layout_marginEnd="100dp"
         android:background="@color/neon_green"
         android:fontFamily="@font/orbitron_black"
+        android:textSize="10sp"
         android:gravity="center"
         android:text="Select Workout Type"
         android:textColor="@color/white"
@@ -85,28 +90,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Upper Body" />
+            android:text="Upper Body"
+            android:textSize="10sp"/>
 
         <RadioButton
             android:id="@+id/rb_lowerBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Lower Body" />
+            android:text="Lower Body"
+            android:textSize="10sp"/>
 
         <RadioButton
             android:id="@+id/rb_hiit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="HIIT" />
+            android:text="HIIT"
+            android:textSize="10sp"/>
 
         <RadioButton
             android:id="@+id/rb_core"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
-            android:text="Core" />
+            android:text="Core"
+            android:textSize="10sp"/>
 
     </RadioGroup>
 
@@ -114,13 +123,18 @@
         android:id="@+id/tv_hiitType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:background="@color/neon_green"
         android:fontFamily="@font/orbitron_black"
+        android:textSize="10sp"
         android:gravity="center"
         android:text="Select HIIT Style"
         android:textColor="@color/white"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/radioGroupHIITtime" />
+        app:layout_constraintBottom_toTopOf="@id/radioGroupHIITtime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroupHIITtime"
@@ -139,36 +153,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron_black"
+            android:textSize="10sp"
             android:text="For Time" />
 
         <RadioButton
             android:id="@+id/rb_amrap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
             android:fontFamily="@font/orbitron_black"
             android:text="AMRAP" />
     </RadioGroup>
+
 
     <TextView
         android:id="@+id/tv_availableEquipment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:background="@color/neon_green"
         android:fontFamily="@font/orbitron_black"
         android:gravity="center"
         android:text="Select Available Equipment"
+        android:textSize="10sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroupHIITtime" />
-
 
     <CheckBox
         android:id="@+id/cb_barbell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:textSize="10sp"
         android:fontFamily="@font/orbitron_black"
         android:text="Barbell"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,6 +197,7 @@
         android:id="@+id/cb_dumbbell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10sp"
         android:layout_marginStart="32dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Dumbbells"
@@ -189,6 +209,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:textSize="10sp"
         android:fontFamily="@font/orbitron_black"
         android:text="Kettlebell"
         app:layout_constraintStart_toEndOf="@+id/cb_dumbbell"
@@ -199,6 +220,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:textSize="10sp"
         android:layout_marginTop="0dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Bench"
@@ -210,7 +232,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="8dp"
+        android:textSize="10sp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Pullup Bar"
         app:layout_constraintStart_toStartOf="parent"
@@ -220,10 +243,11 @@
         android:id="@+id/cb_squatRack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/orbitron_black"
         android:text="Squat Rack"
+        android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/cb_pullupBar"
         app:layout_constraintTop_toBottomOf="@+id/cb_dumbbell" />
 
@@ -231,6 +255,7 @@
         android:id="@+id/cb_dipBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10sp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="0dp"
         android:fontFamily="@font/orbitron_black"
@@ -242,8 +267,9 @@
         android:id="@+id/cb_trxRings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10sp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/orbitron_black"
         android:text="TRX / Rings"
         app:layout_constraintStart_toEndOf="@+id/cb_squatRack"
@@ -257,12 +283,13 @@
         android:fontFamily="@font/orbitron_black"
         android:text="Generate"
         android:textColor="@color/white"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_trxRings"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ListView
         android:id="@+id/lv_workoutView"

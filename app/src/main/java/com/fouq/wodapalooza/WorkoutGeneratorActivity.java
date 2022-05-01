@@ -11,13 +11,9 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import java.io.IOException;
-import java.io.Serializable;
 
 public class WorkoutGeneratorActivity extends AppCompatActivity {
 
